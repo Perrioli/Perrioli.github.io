@@ -1,11 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>💕</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>San Valentín - Hello Kitty</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8d9e1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .card {
+      background-color: #fff;
+      width: 400px;
+      height: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      text-align: center;
+      padding: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .heart {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 50px;
+      color: #ff69b4;
+      animation: floatHeart 4s infinite;
+    }
+
+    .kitty {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      font-size: 24px;
+      color: #ff007f;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeInText 3s ease-in-out 1s forwards;
+    }
+
+    .custom-message {
+      font-size: 18px;
+      font-style: italic;
+      color: #e60073;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeInCustomMessage 4s ease-in-out 2s forwards;
+    }
+
+    .rose-left, .rose-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 80px;
+      z-index: -1;
+    }
+
+    .rose-left {
+      left: -50px;
+      animation: floatRoseLeft 3s ease-in-out infinite;
+    }
+
+    .rose-right {
+      right: -50px;
+      animation: floatRoseRight 3s ease-in-out infinite;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInText {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInCustomMessage {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(0);
+      }
+      50% {
+        transform: translateY(-20px) rotate(180deg);
+      }
+      100% {
+        transform: translateY(0) rotate(360deg);
+      }
+    }
+
+    @keyframes floatRoseLeft {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatRoseRight {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(15px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-    <script src="script.js"></script>
+
+  <div class="card">
+    <div class="heart">❤️</div>
+    <img class="kitty" src="kitty.png" alt="Hello Kitty">
+    <div class="message">Feliz San Valentín mi amor</div>
+
+    <!-- Mensaje personalizado -->
+    <div class="custom-message">Estoy emocionado e ilucionado por haberte conocido, me encantas en todos los aspectos sos muy hermosa, espero poder verte en marzo:( te hago esta cartita medio rapidito jaja <br>espero te guste</div>
+    <div class="hams"><img src="hamster.png" alt="Imagen" width="120" height="120"></div>
+
+    <!-- Rosas a la izquierda y derecha -->
+    <img class="rose-left" src="rosa.png" alt="Rosa izquierda">
+    <img class="rose-right" src="rosa.png" alt="Rosa derecha">
+  </div>
+
+  <script>
+    // Animación adicional con JS
+    setTimeout(() => {
+      document.querySelector('.heart').style.animation = "floatHeart 4s infinite ease-in-out";
+    }, 2000);
+    
+  </script>
+
+
+
 </body>
 </html>
